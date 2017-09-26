@@ -6,6 +6,7 @@ from glob import glob
 import comtypes.client
 from PyPDF2 import PdfFileReader, PdfFileMerger
 import sys
+import csv
 
 #setup 
 config_dir = "./config"
@@ -25,6 +26,12 @@ def get_filepaths(in_dir, file_extension):
     results = [i for i in glob(in_dir + '/*.{}'.format(extension))]
     results = [os.path.abspath(i) for i in results]
     return results
+
+#this function generates a tag to use as a title for a jop app to save as
+def generate_tag(job_context):
+    tag = job_context[job_context.keys()[0]]
+    tag = tag.replace(" ", "")
+    return tag
     
 #stage config data for importing
 # First, grab template docx
@@ -43,12 +50,21 @@ if len(results) != 1:
     sys.exit(0)
 else:
     fill_data_fp = results[0]
+# Finally, grab the pdfs that need to be added to the end of the pkg
+extension = "pdf"
+attach_pdfs = get_filepaths(config_dir, extension)
+
+#Preprocessing
+#Convert csv input fill data to list of dictionaries
+with open(fill_data_fp) as f:
+    jobs = [{k: str(v) for k, v in row.items()} for row in csv.DictReader(f, skipinitialspace=True)]
 
 #Create all word documents from template
-for job in jobs:
+for job_context in jobs:
     #read in template
-    curr_doc = DocxTemplate(template_file)
-    curr_doc_name = "cover_letter_" + job.replace(" ", "") + ".docx"
+    curr_doc = DocxTemplate(template_fp)
+    tag = generate_tag(job_context)
+    curr_doc_name = "cover_letter_" + tag + ".docx"
     curr_doc_path = output_dir_docs + "/" + curr_doc_name
     context = {"company_name" : job}
     #replace contents
