@@ -8,11 +8,12 @@ This word file must have  placeholder variables like: `{{ company_name }}` or `{
 
 * Data you want to fill your cover letter with - CSV file
 You need to provide a CSV containing columns associated with each placeholder variable in the template and each row associated with a new job package as such:
-| company_name | job_title         | ... |
-|--------------|-------------------|-----|
-| Facebook     | Software Engineer | ... |
-| Google       | Data Science      | ... |
-| ...          | ...               | ... |
+
+  | company_name | job_title         | ... |
+  |--------------|-------------------|-----|
+  | Facebook     | Software Engineer | ... |
+  | Google       | Data Science      | ... |
+  | ...          | ...               | ... |
 
 * Extra files to append to package - PDF files
 This could be files like your resume, your transcript, etc. Static files that are to be added to the end of the package in alphabetical order. (So make sure to name them appropriately i.e. prepend 'a_', 'b_', etc.)
