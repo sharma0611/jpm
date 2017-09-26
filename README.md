@@ -63,3 +63,13 @@ $ python reset.py
 ```
 
 This action will not touch `jpm/config`.
+
+## Examples
+
+Run the following to see an example run:
+```bash
+$ cd ~/jpm
+$ cp examples/* config/* 
+& python main.py
+```
+
