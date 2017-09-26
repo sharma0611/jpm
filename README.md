@@ -2,6 +2,13 @@
 
 Create 100's of application packages in seconds. 
 
+## How it works
+This tool automates the "copy pasting" and pdf merging/conversion involved when you have a cover letter and want to apply to multiple jobs in the same family.
+
+The jpm will take your cover letter, data you've gathered about the jobs you want to apply to, & other files like your resume/transcript and create full application packages for you to submit in PDF version.
+
+Got multiple cover letters for each job family you're interested in? Make copies of this repo, one for each cover letter.
+
 ## What you need
 * **Your template cover letter** - docx file
 
@@ -25,6 +32,7 @@ Create 100's of application packages in seconds.
 * **Windows Machine**
 
   Currently, jpm only supports Microsoft Word templates so may only run on windows machines. Linux version with support for LibreOffice (ODT format) coming soon.
+
 
 ## Quick start
 
