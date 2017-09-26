@@ -55,7 +55,7 @@ $ cd ~/jpm
 $ python main.py
 ```
 
-You can now find all final PDF packages in `./packages`. Along the way, cover letters in docx format are stored in `./docs` and pdf version of the same are stored in `./pdfs`.
+You can now find all final PDF packages in `./packages`. Along the way, cover letters in docx format are stored in `./docs` and pdf versions of the same are stored in `./pdfs`.
 
 To reset the repo of all the files just created in the above three directories mentioned, run the following from the jpm folder:
 ```bash
