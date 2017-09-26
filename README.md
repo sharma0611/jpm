@@ -12,7 +12,7 @@ Got multiple cover letters for each job family you're interested in? Make copies
 ## What you need
 * **Your template cover letter** - docx file
 
-  This word file must have  placeholder variables like: `{{ company_name }}` or `{{ job_title }}
+  This word file must have  placeholder variables like: `{{ company_name }}` or `{{ job_title }}`
 
 * **Job Data to fill cover letter with** - CSV file
 
