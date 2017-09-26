@@ -1,24 +1,48 @@
 #!/usr/bin/env python
 
 from docxtpl import DocxTemplate
-from config.joblistings import jobs
 import os
 from glob import glob
 import comtypes.client
 from PyPDF2 import PdfFileReader, PdfFileMerger
+import sys
 
 #setup 
-template_file = "./config/cover_letter_template.docx"
+config_dir = "./config"
 output_dir_docs = "./docs"
 output_dir_pdfs = "./pdfs"
 output_pkgs = "./packages"
-include_dir = "./include"
 wdFormatPDF = 17
 
 #create all required directories
 os.makedirs(output_dir_docs, exist_ok=True)
 os.makedirs(output_dir_pdfs, exist_ok=True)
 os.makedirs(output_pkgs, exist_ok=True)
+
+#define custom fn to grab filepaths in a directory that have certain extension
+def get_filepaths(in_dir, file_extension):
+    in_dir = in_dir.rstrip("/")
+    results = [i for i in glob(in_dir + '/*.{}'.format(extension))]
+    results = [os.path.abspath(i) for i in results]
+    return results
+    
+#stage config data for importing
+# First, grab template docx
+extension = "docx"
+results = get_filepaths(config_dir, extension)
+if len(results) != 1:
+    print("Ensure you have exactly one template docx in /config")
+    sys.exit(0)
+else:
+    template_fp = results[0]
+# Next, grab data to be filled in
+extension = "csv"
+results = get_filepaths(config_dir, extension)
+if len(results) != 1:
+    print("Ensure you have exactly one csv in /config")
+    sys.exit(0)
+else:
+    fill_data_fp = results[0]
 
 #Create all word documents from template
 for job in jobs:
