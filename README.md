@@ -3,11 +3,11 @@
 Create 100's of application packages in seconds. 
 
 ## What you need
-* Your template cover letter - docx file
+* **Your template cover letter** - docx file
 
   This word file must have  placeholder variables like: `{{ company_name }}` or `{{ job_title }}
 
-* Data you want to fill your cover letter with - CSV file
+* **Job Data to fill cover letter with** - CSV file
 
   You need to provide a CSV containing columns associated with each placeholder variable in the template and each row associated with a new job package as such:
 
@@ -17,12 +17,12 @@ Create 100's of application packages in seconds.
   | Google       | Data Science      | ... |
   | ...          | ...               | ... |
 
-* Extra files to append to package - PDF files
+* **Extra files to append to package** - PDF files
 
   This could be files like your resume, your transcript, etc. Static files that are to be added to the end of the package in alphabetical order. (So make sure to name them appropriately i.e. prepend 'a_', 'b_', etc.)
 
-* Python
-* Windows Machine
+* **Python**
+* **Windows Machine**
 
   Currently, jpm only supports Microsoft Word templates so may only run on windows machines. Linux version with support for LibreOffice (ODT format) coming soon.
 
