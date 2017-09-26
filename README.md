@@ -8,7 +8,6 @@ This word file must have  placeholder variables like: `{{ company_name }}` or `{
 
 * Data you want to fill your cover letter with - CSV file
 You need to provide a CSV containing columns associated with each placeholder variable in the template and each row associated with a new job package as such:
-
 | company_name | job_title         | ... |
 |--------------|-------------------|-----|
 | Facebook     | Software Engineer | ... |
