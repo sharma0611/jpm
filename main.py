@@ -29,8 +29,9 @@ def get_filepaths(in_dir, file_extension):
 
 #this function generates a tag to use as a title for a jop app to save as
 def generate_tag(job_context):
-    tag = job_context[job_context.keys()[0]]
+    tag = next(iter(job_context.values()))
     tag = tag.replace(" ", "")
+    tag = tag.lower()
     return tag
     
 #stage config data for importing
@@ -66,9 +67,8 @@ for job_context in jobs:
     tag = generate_tag(job_context)
     curr_doc_name = "cover_letter_" + tag + ".docx"
     curr_doc_path = output_dir_docs + "/" + curr_doc_name
-    context = {"company_name" : job}
     #replace contents
-    curr_doc.render(context)
+    curr_doc.render(job_context)
     #save to output docs
     if os.path.isfile(curr_doc_path):
         os.remove(curr_doc_path)
@@ -95,7 +95,6 @@ word.Quit()
 
 
 #Get all pdf documents, append pages needed
-add_files = glob(include_dir + "/*.pdf")
 
 for pdf_doc in glob(output_dir_pdfs + "/*.pdf"):
     basename = os.path.basename(pdf_doc)
@@ -106,8 +105,8 @@ for pdf_doc in glob(output_dir_pdfs + "/*.pdf"):
     with open(pdf_doc, 'rb') as cover_letter:
         output.append(PdfFileReader(cover_letter))
     #add each file from includes
-    for add_file in add_files:
-        with open(add_file, 'rb') as temp:
+    for attached_pdf in attach_pdfs:
+        with open(attached_pdf, 'rb') as temp:
             output.append(PdfFileReader(temp))
     if os.path.isfile(pkg_output_path + ".pdf"):
         os.remove(pkg_output_path + ".pdf")
