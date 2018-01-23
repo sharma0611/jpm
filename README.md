@@ -29,7 +29,7 @@ Got multiple cover letters for each job family you're interested in? Make copies
   This could be files like your resume, your transcript, etc. Static files that are to be added to the end of the package in alphabetical order. (So make sure to name them appropriately i.e. prepend 'a_', 'b_', etc.)
 
 * **Python**
-* **Windows Machine**
+* **Windows/Mac Machine**
 
   Currently, jpm only supports Microsoft Word templates so may only run on windows or mac machines. Linux version with support for LibreOffice (ODT format) coming soon.
 
