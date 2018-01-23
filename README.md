@@ -39,7 +39,7 @@ Got multiple cover letters for each job family you're interested in? Make copies
 First let's get the repo onto your machine.
 ```bash
 $ cd ~
-$ git clone 
+$ git clone https://github.com/sharma0611/jpm.git
 $ cd jpm
 $ pip install -r requirements.txt
 ```
@@ -70,6 +70,6 @@ Run the following to see an example run:
 ```bash
 $ cd ~/jpm
 $ cp examples/* config/* 
-& python main.py
+$ python main.py
 ```
 
