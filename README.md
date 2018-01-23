@@ -31,7 +31,7 @@ Got multiple cover letters for each job family you're interested in? Make copies
 * **Python**
 * **Windows Machine**
 
-  Currently, jpm only supports Microsoft Word templates so may only run on windows machines. Linux version with support for LibreOffice (ODT format) coming soon.
+  Currently, jpm only supports Microsoft Word templates so may only run on windows or mac machines. Linux version with support for LibreOffice (ODT format) coming soon.
 
 
 ## Quick start
